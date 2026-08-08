@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GuitarLA — Descubre nuestra colección de guitarras premium. Instrumento de calidad para músicos apasionados." />
+    <meta name="theme-color" content="#0f0f13" />
+    <title>GuitarLA | Tienda de Guitarras Premium</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════════════════
+         HEADER
+    ════════════════════════════════════════════════════ -->
+    <header class="header">
+      <div class="header__inner">
+        <img src="/logo.svg" alt="GuitarLA logo" class="header__logo" id="site-logo" />
+
+        <nav class="header__nav" aria-label="Navegación principal">
+          <a href="#coleccion">Colección</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#nosotros">Nosotros</a>
+
+          <!-- Cart button with badge -->
+          <button
+            class="cart-btn"
+            id="cart-toggle-btn"
+            aria-label="Abrir carrito de compras"
+            aria-expanded="false"
+            aria-controls="cart-panel"
+          >
+            <img src="/carrito.png" alt="Carrito" class="cart-btn__icon" />
+            <span>Carrito</span>
+            <span class="cart-btn__badge" id="cart-badge" aria-live="polite">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Bienvenida">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <span class="hero__eyebrow">✦ Instrumentos Premium</span>
+        <h1 class="hero__title">
+          Sonido que
+          <span>Inspira.</span>
+        </h1>
+        <p class="hero__subtitle">
+          Guitarras artesanales para músicos que exigen lo mejor.
+          Calidad profesional desde nuestro taller hasta tus manos.
+        </p>
+        <div class="hero__actions">
+          <a href="#coleccion" class="btn-primary">Ver Colección →</a>
+          <a href="#cursos" class="btn-secondary">Nuestros Cursos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CATALOG — "Nuestra Colección"
+    ════════════════════════════════════════════════════ -->
+    <main>
+      <section class="catalog" id="coleccion" aria-labelledby="catalog-heading">
+        <div class="catalog__header">
+          <span class="catalog__eyebrow">Nuestra Colección</span>
+          <h2 class="catalog__title" id="catalog-heading">Guitarras Disponibles</h2>
+          <p class="catalog__subtitle">
+            Cada instrumento es seleccionado para ofrecerte la mejor experiencia sonora.
+          </p>
+        </div>
+
+        <!-- Las tarjetas se generan dinámicamente via App.ts -->
+        <div class="catalog__grid" id="catalog-grid" role="list" aria-label="Catálogo de guitarras">
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <p>&copy; 2024 <strong>GuitarLA</strong>. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════
+         CART OVERLAY + PANEL LATERAL
+    ════════════════════════════════════════════════════ -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+    <aside
+      class="cart-panel"
+      id="cart-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Carrito de compras"
+    >
+      <div class="cart-panel__header">
+        <h2 class="cart-panel__title">Tu Carrito</h2>
+        <button class="cart-panel__close" id="cart-close-btn" aria-label="Cerrar carrito">✕</button>
+      </div>
+
+      <!-- Items se renderizan dinámicamente via App.ts -->
+      <div class="cart-panel__items" id="cart-items" role="list">
+      </div>
+
+      <div class="cart-panel__footer">
+        <div class="cart-summary">
+          <div class="cart-summary__row">
+            <span>Artículos</span>
+            <span id="cart-count-summary">0 ítems</span>
+          </div>
+          <div class="cart-summary__total">
+            <span class="cart-summary__total-label">Total a Pagar</span>
+            <span class="cart-summary__total-amount" id="cart-total">$0</span>
+          </div>
+        </div>
+        <button class="btn-checkout" id="checkout-btn">Proceder al Pago →</button>
+      </div>
+    </aside>
+
+    <!-- Entry point TypeScript -->
+    <script type="module" src="/src/App.ts"></script>
+  </body>
+</html>

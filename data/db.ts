@@ -1,4 +1,4 @@
-import type { GuitarDTO } from '../dtos/guitar.dto'
+import type { GuitarDTO } from '../src/DTO/guitar.dto'
 
 export const db : GuitarDTO[] = [
     {
